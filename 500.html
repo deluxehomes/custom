@@ -38,15 +38,17 @@
             height: auto;
             margin-top: 20px;
         }
+        .hidden-footer {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <img src="https://www.deluxehomes.com/wp-content/uploads/2018/06/DeluxeHolidayHomesNewLogo612x300.png" alt="Logo">
     <h1>502 Bad Gateway</h1>
-    <p>Whoopsie-daisy! Something went kooky, but no worries!</p>
-    <p>::CLOUDFLARE_ERROR_500S_BOX::</p>
-    <p>Please give your refresh button some love and click it.</p>
-    <p class="fun-message">Fingers crossed for a magical internet recovery!</p>
+    <p>Uh-oh! It seems our holiday getaway hit a little hiccup, but don't worry!</p>
+    <p>Please show some love to the refresh button and give it a click.</p>
+    <p class="fun-message">Here's to a magical recovery for your dream vacation!</p>
     <button onclick="refreshPage()">Refresh</button>
 
     <script>
@@ -54,5 +56,7 @@
             location.reload(true);
         }
     </script>
+
+    <p class="hidden-footer">::CLOUDFLARE_ERROR_500S_BOX::</p>
 </body>
 </html>
