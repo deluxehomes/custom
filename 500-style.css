@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.fun-message {
+    font-size: 1.5em;
+    color: #0088cc; /* Fun blue color */
+    margin-top: 20px;
+}
+
+.countdown {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+}
+
+.refresh-message {
+    font-size: 1.2em;
+    color: #FF6347; /* Tomato color for the message */
+    margin-top: 20px;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #0088cc; /* Blue color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.hidden-footer {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p, .fun-message, .countdown, .refresh-message {
+        font-size: 1em;
+    }
+    button {
+        font-size: 1em;
+        padding: 8px 16px;
+        margin-top: 15px;
+    }
+}
+
+/* Hide cf-error-details */
+.cf-error-details {
+    display: none;
+}
