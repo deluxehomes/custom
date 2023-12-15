@@ -4,65 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Overloaded - Try again later</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 2em;
-            color: #333;
-        }
-        p {
-            font-size: 1.2em;
-            color: #666;
-        }
-        .fun-message {
-            font-size: 1.5em;
-            color: #0088cc; /* Fun blue color */
-            margin-top: 20px;
-        }
-        button {
-            font-size: 1.2em;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #0088cc; /* Blue color for the button */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-        .hidden-footer {
-            display: none;
-            margin-top: 20px;
-        }
-
-        /* Media Query for Mobile */
-        @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 1.5em;
-            }
-            p, .fun-message {
-                font-size: 1em;
-            }
-            button {
-                font-size: 1em;
-                padding: 8px 16px;
-                margin-top: 15px;
-            }
-        }
-
-        /* Hide cf-error-details */
-        .cf-error-details {
-            display: none;
-        }
-    </style>
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
     <img src="https://www.deluxehomes.com/wp-content/uploads/2018/06/DeluxeHolidayHomesNewLogo612x300.png" alt="Logo">
@@ -70,7 +13,23 @@
     <p>Oops! It seems there's a small hiccup on our holiday home site, but no worries!</p>
     <p>Please show some love to the refresh button and give it a click.</p>
     <button onclick="refreshPage()">Refresh</button>
-    <script>function refreshPage() {location.reload(true);}</script>
+    <p class="refresh-message">Or the page will automatically refresh in <span id="countdown">5</span> seconds.</p>
+    <script>
+        function refreshPage() {
+            location.reload(true);
+        }
+
+        (function updateCountdown(countdownValue = 5) {
+            let countdownElement = document.getElementById('countdown');
+            countdownElement.textContent = countdownValue--;
+
+            if (countdownValue >= 0) {
+                setTimeout(() => updateCountdown(countdownValue), 1000);
+            } else {
+                refreshPage();
+            }
+        })();
+    </script>
     <p class="fun-message">Here's to a magical recovery for everyone enjoying our holiday homes!</p>
     <p class="hidden-footer">::CLOUDFLARE_ERROR_500S_BOX::</p>
 </body>
